@@ -1,0 +1,87 @@
+@use "../hamburgers/hamburgers";
+
+header {
+  background-color: var(--hero);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 34px 48px;
+
+  &.fixed {
+    position: fixed;
+
+    padding: 10px 48px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      width: 180px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        transform: scale(1.4) translateX(-0.5rem);
+      }
+    }
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      li {
+        padding: 0.75rem 1rem;
+        margin-right: 1rem;
+        color: var(--white);
+        cursor: pointer;
+
+        font-size: 18px;
+        line-height: 18px;
+
+        &:last-child {
+          padding: 0;
+          margin: 0;
+          margin-left: 1rem;
+        }
+      }
+
+      button {
+        font-family: "Fraunces", serif;
+        width: 140px;
+        height: 56px;
+        border: none;
+        border-radius: 28px;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 16px;
+        cursor: pointer;
+
+        color: var(--very-dark-desaturated-blue);
+
+        background-color: var(--white);
+      }
+    }
+
+    .hamburger {
+      height: 56px;
+      border-radius: 28px;
+
+      color: var(--dark-grayish-blue);
+
+      // background-color: var(--white);
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}

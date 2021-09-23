@@ -1,0 +1,109 @@
+.copy {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "a b"
+    "c d";
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    h2 {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      color: var(--very-dark-desaturated-blue);
+
+      font-size: 40px;
+      line-height: 50px;
+
+      padding: 0 4rem 0 0;
+      margin-bottom: 32px;
+    }
+
+    p {
+      color: var(--dark-grayish-blue);
+      font-size: 18px;
+      line-height: 30px;
+
+      margin-bottom: 44px;
+    }
+
+    button {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      height: 20px;
+
+      border: none;
+      color: var(--very-dark-desaturated-blue);
+      background-color: transparent;
+      position: relative;
+
+      font-size: 16px;
+      line-height: 16px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        z-index: -1;
+
+        opacity: 0.4;
+        filter: blur(1px);
+
+        width: 115%;
+        height: 10px;
+        border-radius: 5px;
+        background-color: var(--egg);
+
+        transition-property: opacity, filter;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.2s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    &:first-child {
+      padding: 120px 100px 120px 164px;
+    }
+    &.audience {
+      grid-area: d;
+      padding: 120px 164px 120px 110px;
+    }
+  }
+
+  .img {
+    height: 600px;
+    width: 100%;
+
+    &.egg {
+      background-color: var(--egg);
+
+      background: url("../../images/desktop/image-transform.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &:last-child {
+      background-color: var(--cup);
+      grid-area: c;
+
+      background: url("../../images/desktop/image-stand-out.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
