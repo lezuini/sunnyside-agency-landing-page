@@ -1,11 +1,11 @@
 import "./App.scss";
 
-import Copy from "./components/Copy";
-import Features from "./components/Features";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Copy from "./components/Copy";
+import Features from "./components/Features";
 import Proof from "./components/Proof";
+import Footer from "./components/Footer";
 
 function App() {
   return (

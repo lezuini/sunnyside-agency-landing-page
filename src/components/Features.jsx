@@ -2,7 +2,7 @@ const Features = () => {
   return (
     <div className="features">
       <div className="feature">
-        <div className="text">
+        <div className="text cherry">
           <h2>Graphic design</h2>
           <p>
             Great design makes you memorable. We deliver artwork that
@@ -12,7 +12,7 @@ const Features = () => {
         </div>
       </div>
       <div className="feature">
-        <div className="text">
+        <div className="text orange">
           <h2>Photography</h2>
           <p>
             Increase your credibility by getting the most stunning, high-quality

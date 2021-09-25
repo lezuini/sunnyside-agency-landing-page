@@ -4,7 +4,17 @@ import { ReactComponent as Logo } from "../images/logo.svg";
 
 const Header = () => {
   const [active, setActive] = useState(false);
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(
+    document.body.clientWidth < 801 ? false : true
+  );
+
+  window.addEventListener("resize", function (e) {
+    if (document.body.clientWidth < 801) {
+      setHidden(false);
+    } else {
+      setHidden(true);
+    }
+  });
 
   return (
     <header>
@@ -12,7 +22,7 @@ const Header = () => {
         <div className="logo">
           <Logo />
         </div>
-        <nav>
+        <nav className={active ? "expand" : ""}>
           <ul>
             <li>About</li>
             <li>Services</li>
@@ -25,10 +35,10 @@ const Header = () => {
         <button
           className={
             hidden
-              ? active
-                ? "hamburger hamburger--squeeze is-active"
-                : "hamburger hamburger--squeeze"
-              : "hamburger hamburger--squeeze hidden"
+              ? "hamburger hamburger--squeeze hidden"
+              : active
+              ? "hamburger hamburger--squeeze is-active"
+              : "hamburger hamburger--squeeze"
           }
           type="button"
           onClick={() => setActive(!active)}
