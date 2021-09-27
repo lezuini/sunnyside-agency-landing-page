@@ -86,24 +86,60 @@
 
   .img {
     height: 600px;
-    width: 100%;
 
-    &.egg {
-      background-color: var(--egg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      background: url("../../images/desktop/image-transform.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+    img {
+      height: 100%;
+      width: 100%;
+      object-position: center;
+      object-fit: cover;
     }
-    &:last-child {
+
+    .transform {
+      background-color: var(--egg);
+    }
+    .stand {
       background-color: var(--cup);
       grid-area: c;
+    }
+  }
+}
 
-      background: url("../../images/desktop/image-stand-out.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+@media screen and (max-width: 400px) {
+  .copy {
+    grid-template-columns: 1fr;
+    // grid-template-rows: repeat(4, 312px);
+    grid-template-areas: none;
+
+    .text {
+      &:first-child {
+        padding: 0;
+        grid-area: initial;
+        grid-row-start: 2;
+      }
+      &.audience {
+        padding: 0;
+        grid-area: initial;
+        grid-row-start: 4;
+      }
+    }
+
+    .img {
+      height: 312px;
+      background-size: contain;
+
+      .transform {
+        grid-area: initial;
+        grid-row-start: 1;
+      }
+
+      .stand {
+        grid-area: initial;
+        grid-row-start: 3;
+      }
     }
   }
 }

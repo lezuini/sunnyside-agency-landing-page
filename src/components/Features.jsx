@@ -1,4 +1,23 @@
+import { useState } from "react";
+
+// import DesktopGraphicDesign from "../images/desktop/image-graphic-design.jpg";
+// import DesktopPhotography from "../images/desktop/image-photography.jpg";
+// import MobileGraphicDesign from "../images/mobile/image-graphic-design.jpg";
+// import MobilePhotography from "../images/mobile/image-photography.jpg";
+
 const Features = () => {
+  const [mobile, setMobile] = useState(
+    document.body.clientWidth < 401 ? true : false
+  );
+
+  window.addEventListener("resize", function (e) {
+    if (document.body.clientWidth < 401) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  });
+
   return (
     <div className="features">
       <div className="feature">

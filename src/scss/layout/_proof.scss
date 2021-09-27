@@ -90,3 +90,21 @@
     }
   }
 }
+
+@media screen and (max-width: 400px) {
+  .proof {
+    .testimonials {
+      .container {
+        flex-direction: column;
+      }
+    }
+
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+
+      .picture {
+        height: 188px;
+      }
+    }
+  }
+}

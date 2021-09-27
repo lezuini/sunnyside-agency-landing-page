@@ -1,13 +1,31 @@
+import { useState } from "react";
+
 import avatarEmily from "../images/image-emily.jpg";
 import avatarThomas from "../images/image-thomas.jpg";
 import avatarJennie from "../images/image-jennie.jpg";
 
-import milkbottlesDesktop from "../images/desktop/image-gallery-milkbottles.jpg";
-import orangeDesktop from "../images/desktop/image-gallery-orange.jpg";
-import coneDesktop from "../images/desktop/image-gallery-cone.jpg";
-import sugarcubesDesktop from "../images/desktop/image-gallery-sugarcubes.jpg";
+import DesktopGalleryCone from "../images/desktop/image-gallery-cone.jpg";
+import DesktopGalleryMilkbottles from "../images/desktop/image-gallery-milkbottles.jpg";
+import DesktopGalleryOrange from "../images/desktop/image-gallery-orange.jpg";
+import DesktopGallerySugarcubes from "../images/desktop/image-gallery-sugarcubes.jpg";
+import MobileGalleryCone from "../images/mobile/image-gallery-cone.jpg";
+import MobileGalleryMilkbottles from "../images/mobile/image-gallery-milkbottles.jpg";
+import MobileGalleryOrange from "../images/mobile/image-gallery-orange.jpg";
+import MobileGallerySugarcubes from "../images/mobile/image-gallery-sugarcubes.jpg";
 
 const Proof = () => {
+  const [mobile, setMobile] = useState(
+    document.body.clientWidth < 401 ? true : false
+  );
+
+  window.addEventListener("resize", function (e) {
+    if (document.body.clientWidth < 401) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  });
+
   return (
     <div className="proof">
       <div className="testimonials">
@@ -50,16 +68,28 @@ const Proof = () => {
       </div>
       <div className="gallery">
         <div className="picture">
-          <img src={milkbottlesDesktop} alt="Milkbottles" />
+          <img
+            src={mobile ? MobileGalleryMilkbottles : DesktopGalleryMilkbottles}
+            alt="Milkbottles"
+          />
         </div>
         <div className="picture">
-          <img src={orangeDesktop} alt="Orange" />
+          <img
+            src={mobile ? MobileGalleryOrange : DesktopGalleryOrange}
+            alt="Orange"
+          />
         </div>
         <div className="picture">
-          <img src={coneDesktop} alt="Cone" />
+          <img
+            src={mobile ? MobileGalleryCone : DesktopGalleryCone}
+            alt="Cone"
+          />
         </div>
         <div className="picture">
-          <img src={sugarcubesDesktop} alt="Sugarcubes" />
+          <img
+            src={mobile ? MobileGallerySugarcubes : DesktopGallerySugarcubes}
+            alt="Sugarcubes"
+          />
         </div>
       </div>
     </div>
