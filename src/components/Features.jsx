@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-// import DesktopGraphicDesign from "../images/desktop/image-graphic-design.jpg";
-// import DesktopPhotography from "../images/desktop/image-photography.jpg";
-// import MobileGraphicDesign from "../images/mobile/image-graphic-design.jpg";
-// import MobilePhotography from "../images/mobile/image-photography.jpg";
+import DesktopGraphicDesign from "../images/desktop/image-graphic-design.jpg";
+import DesktopPhotography from "../images/desktop/image-photography.jpg";
+import MobileGraphicDesign from "../images/mobile/image-graphic-design.jpg";
+import MobilePhotography from "../images/mobile/image-photography.jpg";
 
 const Features = () => {
   const [mobile, setMobile] = useState(
@@ -21,6 +21,10 @@ const Features = () => {
   return (
     <div className="features">
       <div className="feature">
+        <img
+          src={mobile ? MobileGraphicDesign : DesktopGraphicDesign}
+          alt="Graphic Design"
+        />
         <div className="text cherry">
           <h2>Graphic design</h2>
           <p>
@@ -31,6 +35,10 @@ const Features = () => {
         </div>
       </div>
       <div className="feature">
+        <img
+          src={mobile ? MobilePhotography : DesktopPhotography}
+          alt="Photography"
+        />
         <div className="text orange">
           <h2>Photography</h2>
           <p>

@@ -1,20 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { ReactComponent as Logo } from "../images/logo.svg";
 
 const Header = () => {
   const [active, setActive] = useState(false);
   const [hidden, setHidden] = useState(
-    document.body.clientWidth < 801 ? false : true
+    document.body.clientWidth <= 800 ? false : true
   );
 
+  const [opacityFix, setOpacityFix] = useState(false);
+
   window.addEventListener("resize", function (e) {
-    if (document.body.clientWidth < 801) {
-      setHidden(false);
+    if (document.body.clientWidth <= 800) {
+      if (hidden) {
+        setHidden(false);
+        setOpacityFix(true);
+      }
     } else {
-      setHidden(true);
+      if (!hidden) {
+        setHidden(true);
+      }
     }
   });
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpacityFix(false);
+    }, 1000);
+  }, [opacityFix]);
 
   return (
     <header>
@@ -22,7 +35,7 @@ const Header = () => {
         <div className="logo">
           <Logo />
         </div>
-        <nav className={active ? "expand" : ""}>
+        <nav className={active ? "expand" : opacityFix ? "hidden" : undefined}>
           <ul>
             <li>About</li>
             <li>Services</li>

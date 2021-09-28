@@ -2,8 +2,6 @@
 
 This is a solution to the [Sunnyside agency landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef).
 
-_( Not finished yet )_
-
 ## Links 🔗
 
 - Solution URL: [Repository](https://github.com/leonardomeza87/sunnyside-agency-landing-page)
@@ -18,19 +16,15 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot](./src/images/screenshot.png)
+![Screenshot](./public/screenshot.png)
 
 ### Built with
 
 - CSS custom properties.
-- Flexbox.
-- CSS Grid.
+- CSS Flexbox and Grid.
+- [SASS](https://sass-lang.com) - CSS preprocessor.
 - Desktop-first workflow.
 - [React](https://reactjs.org/) - JS library.
-
-### Useful resources
-
-- ...
 
 ### More about me
 

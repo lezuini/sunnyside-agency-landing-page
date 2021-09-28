@@ -80,6 +80,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
+    background-color: var(--hero);
+
     .picture {
       height: 447px;
       overflow: hidden;
@@ -91,14 +93,127 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1150px) {
+  .proof {
+    .gallery {
+      .picture {
+        height: 360px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .proof {
+    .gallery {
+      .picture {
+        height: 320px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .proof {
+    .gallery {
+      .picture {
+        height: 280px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
   .proof {
     .testimonials {
+      h2 {
+        margin: 4rem 0;
+        font-size: 16px;
+      }
+
       .container {
         flex-direction: column;
+        margin-bottom: 22px;
+
+        .testimony {
+          .avatar {
+            margin-bottom: 2rem;
+          }
+
+          p {
+            margin-bottom: 34px;
+          }
+
+          span {
+            margin-bottom: 70px;
+          }
+        }
       }
     }
 
+    .gallery {
+      grid-template-columns: repeat(4, 1fr);
+
+      .picture {
+        height: 260px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .proof {
+    .gallery {
+      .picture {
+        height: 220px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .proof {
+    .gallery {
+      .picture {
+        height: 188px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .proof {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+
+      .picture {
+        height: 320px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .proof {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+
+      .picture {
+        height: 280px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .proof {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+
+      .picture {
+        height: 220px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .proof {
     .gallery {
       grid-template-columns: repeat(2, 1fr);
 

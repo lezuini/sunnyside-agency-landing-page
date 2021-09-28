@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-// import header from "../images/desktop/image-header.jpg";
-
 import mobileStandOut from "../images/mobile/image-stand-out.jpg";
 import mobileTransform from "../images/mobile/image-transform.jpg";
 import desktopStandOut from "../images/desktop/image-stand-out.jpg";

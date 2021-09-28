@@ -1,5 +1,6 @@
 .copy {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
     "a b"
@@ -19,7 +20,6 @@
       font-size: 40px;
       line-height: 50px;
 
-      // padding: 0 4rem 0 0;
       margin-bottom: 32px;
     }
 
@@ -81,6 +81,10 @@
     &.audience {
       grid-area: d;
       padding: 120px 164px 120px 110px;
+
+      button::after {
+        background-color: var(--cup);
+      }
     }
   }
 
@@ -108,27 +112,94 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1200px) {
+  .copy {
+    .text {
+      &:first-child {
+        padding: 120px 100px 120px 100px;
+      }
+      &.audience {
+        padding: 120px 100px 120px 110px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1080px) {
+  .copy {
+    .text {
+      &:first-child {
+        padding: 100px 80px 100px 80px;
+      }
+      &.audience {
+        padding: 100px 80px 100px 80px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .copy {
+    .text {
+      h2 {
+        font-size: 34px;
+        line-height: 40px;
+
+        margin-bottom: 32px;
+      }
+
+      &:first-child {
+        padding: 90px 70px 90px 70px;
+      }
+      &.audience {
+        padding: 90px 70px 90px 70px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
   .copy {
     grid-template-columns: 1fr;
-    // grid-template-rows: repeat(4, 312px);
     grid-template-areas: none;
 
     .text {
+      text-align: center;
+      height: 600px;
+      width: 60%;
+      margin: 0 auto;
+
+      h2 {
+        font-size: 32px;
+        line-height: 38px;
+        width: 100%;
+
+        margin-bottom: 26px;
+      }
+
+      p {
+        margin-bottom: 34px;
+      }
+
+      button {
+        margin-bottom: 3px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
       &:first-child {
-        padding: 0;
+        padding: 4rem 1rem;
         grid-area: initial;
         grid-row-start: 2;
       }
       &.audience {
-        padding: 0;
+        padding: 4rem 2rem;
         grid-area: initial;
         grid-row-start: 4;
       }
     }
 
     .img {
-      height: 312px;
+      height: 600px;
       background-size: contain;
 
       .transform {
@@ -140,6 +211,41 @@
         grid-area: initial;
         grid-row-start: 3;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .copy {
+    .text {
+      height: 500px;
+      width: 80%;
+    }
+    .img {
+      height: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .copy {
+    .text {
+      height: 400px;
+      width: 100%;
+    }
+    .img {
+      height: 312px;
+    }
+  }
+}
+@media screen and (max-width: 370px) {
+  .copy {
+    .text {
+      height: max-content;
+      width: 100%;
+    }
+    .img {
+      height: 312px;
     }
   }
 }

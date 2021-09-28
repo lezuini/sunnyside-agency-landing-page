@@ -63,3 +63,37 @@ footer {
     }
   }
 }
+
+@media screen and (max-width: 400px) {
+  footer {
+    padding-top: 68px;
+
+    ul {
+      li {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 370px) {
+  footer {
+    padding-top: 68px;
+
+    ul {
+      li {
+        margin: 0 6px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 340px) {
+  footer {
+    padding-top: 68px;
+
+    ul {
+      li {
+        margin: 0;
+      }
+    }
+  }
+}
